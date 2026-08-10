@@ -17,6 +17,7 @@ describe('contract manifest', () => {
 
   test('builds parameterized paths safely', () => {
     expect(path('dealers.update', { id: 'node/a' })).toBe('/api/dealers/node%2Fa')
+    expect(path('users.password.update', { id: 'user/a' })).toBe('/api/users/user%2Fa/password')
     expect(() => path('dealers.update')).toThrow('Missing path parameter')
     expect(() => path('missing')).toThrow('Unknown API operation')
   })

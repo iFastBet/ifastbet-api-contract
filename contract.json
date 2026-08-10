@@ -1,6 +1,6 @@
 {
   "name": "ifastbet adminka API contract",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "routes": [
     { "operation": "structure.read", "method": "POST", "path": "/api/structure/read" },
     { "operation": "dashboard.read", "method": "POST", "path": "/api/dashboard" },
@@ -15,6 +15,7 @@
     { "operation": "halls.update", "method": "PATCH", "path": "/api/halls/{id}" },
     { "operation": "users.create", "method": "POST", "path": "/api/users" },
     { "operation": "users.update", "method": "PATCH", "path": "/api/users/{id}" },
+    { "operation": "users.password.update", "method": "PATCH", "path": "/api/users/{id}/password" },
     { "operation": "users.remove", "method": "DELETE", "path": "/api/users/{id}" },
     { "operation": "currencies.summary", "method": "GET", "path": "/api/currencies/summary" },
     { "operation": "currencies.create", "method": "POST", "path": "/api/currencies" },
@@ -38,6 +39,7 @@
     { "operation": "rollups.read", "method": "POST", "path": "/api/rollups/read" },
     { "operation": "journal.read", "method": "POST", "path": "/api/journal/read" },
     { "operation": "profile.update", "method": "PATCH", "path": "/api/profile" },
+    { "operation": "profile.password.update", "method": "PATCH", "path": "/api/profile/password" },
     { "operation": "games.update", "method": "PATCH", "path": "/api/games/{id}" },
     { "operation": "tickets.lookup", "method": "POST", "path": "/api/tickets/lookup" },
     { "operation": "tickets.preview", "method": "POST", "path": "/api/tickets/payout/preview" },
