@@ -13,6 +13,8 @@
 
 Контракт поверхности не заменяет integration tests. Произвольные request/response payload пока проверяются тестами соответствующих репозиториев; их JSON Schema можно добавлять в контракт постепенно.
 
+Денежные платежи, цены кредитов, проценты и сведения о задолженности находятся во внешнем контуре и не входят в API iFastBet. Контракт покрывает только кредитные балансы, эмиссию, переводы, возвраты, обороты и игровой расчёт.
+
 ## Подключение
 
 Потребители фиксируют Git tag и коммитят `bun.lock`:
@@ -20,7 +22,7 @@
 ```json
 {
   "devDependencies": {
-    "@ifastbet/api-contract": "git+https://github.com/iFastBet/ifastbet-api-contract.git#v0.1.0"
+    "@ifastbet/api-contract": "git+https://github.com/iFastBet/ifastbet-api-contract.git#v1.0.0"
   }
 }
 ```

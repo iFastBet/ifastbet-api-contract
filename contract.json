@@ -1,6 +1,6 @@
 {
   "name": "ifastbet adminka API contract",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "routes": [
     { "operation": "structure.read", "method": "POST", "path": "/api/structure/read" },
     { "operation": "dashboard.read", "method": "POST", "path": "/api/dashboard" },
@@ -29,14 +29,6 @@
     { "operation": "transactions.emit", "method": "POST", "path": "/api/emit" },
     { "operation": "transactions.transfer", "method": "POST", "path": "/api/transfer" },
     { "operation": "transactions.grantAndTransfer", "method": "POST", "path": "/api/grant-and-transfer" },
-    { "operation": "creditPricing.setDefault", "method": "POST", "path": "/api/credit-pricing/default" },
-    { "operation": "creditPricing.setOverride", "method": "POST", "path": "/api/credit-pricing/override" },
-    { "operation": "settlements.summary", "method": "POST", "path": "/api/settlements/summary" },
-    { "operation": "settlements.entries", "method": "POST", "path": "/api/settlements/entries" },
-    { "operation": "settlements.quote", "method": "POST", "path": "/api/exchange-rates/quote" },
-    { "operation": "settlements.payment", "method": "POST", "path": "/api/settlements/payment" },
-    { "operation": "settlements.adjust", "method": "POST", "path": "/api/settlements/adjust" },
-    { "operation": "settlements.reverse", "method": "POST", "path": "/api/settlements/reverse" },
     { "operation": "rollups.read", "method": "POST", "path": "/api/rollups/read" },
     { "operation": "journal.read", "method": "POST", "path": "/api/journal/read" },
     { "operation": "profile.update", "method": "PATCH", "path": "/api/profile" },
