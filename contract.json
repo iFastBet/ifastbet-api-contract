@@ -1,6 +1,6 @@
 {
   "name": "ifastbet adminka API contract",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "routes": [
     { "operation": "structure.read", "method": "POST", "path": "/api/structure/read" },
     { "operation": "dashboard.read", "method": "POST", "path": "/api/dashboard" },
@@ -59,7 +59,7 @@
       "games": { "queryFields": ["code"] },
       "balances": { "realtime": true },
       "transactions": { "realtime": true, "queryFields": ["created_at"] },
-      "rounds": { "realtime": true, "queryFields": ["started_at", "hall", "broadcast"] },
+      "rounds": { "realtime": true, "queryFields": ["started_at", "hall", "game", "broadcast"] },
       "broadcasts": { "realtime": true, "queryFields": ["hall", "game"] },
       "tickets": { "realtime": true, "queryFields": ["created_at", "game", "round", "currency"] }
     }
