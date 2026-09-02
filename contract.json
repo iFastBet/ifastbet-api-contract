@@ -1,6 +1,6 @@
 {
   "name": "ifastbet adminka API contract",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "routes": [
     { "operation": "structure.read", "method": "POST", "path": "/api/structure/read" },
     { "operation": "dashboard.read", "method": "POST", "path": "/api/dashboard" },
@@ -34,6 +34,14 @@
     { "operation": "profile.update", "method": "PATCH", "path": "/api/profile" },
     { "operation": "profile.password.update", "method": "PATCH", "path": "/api/profile/password" },
     { "operation": "games.update", "method": "PATCH", "path": "/api/games/{id}" },
+    { "operation": "games.rtpPolicy.update", "method": "PATCH", "path": "/api/games/{id}/rtp-policy" },
+    { "operation": "nodeGameRtp.list", "method": "GET", "path": "/api/nodes/{id}/game-rtp" },
+    { "operation": "nodeGameRtp.set", "method": "PUT", "path": "/api/nodes/{id}/game-rtp/{gameId}" },
+    { "operation": "nodeGameRtp.remove", "method": "DELETE", "path": "/api/nodes/{id}/game-rtp/{gameId}" },
+    { "operation": "engine.enrollments.create", "method": "POST", "path": "/api/engine/enrollments" },
+    { "operation": "engine.workers.list", "method": "GET", "path": "/api/engine/workers" },
+    { "operation": "engine.streams.list", "method": "GET", "path": "/api/engine/streams" },
+    { "operation": "engine.workers.disable", "method": "POST", "path": "/api/engine/workers/{id}/disable" },
     { "operation": "tickets.lookup", "method": "POST", "path": "/api/tickets/lookup" },
     { "operation": "tickets.preview", "method": "POST", "path": "/api/tickets/payout/preview" },
     { "operation": "tickets.intake", "method": "POST", "path": "/api/tickets" },
@@ -51,8 +59,8 @@
       "games": { "queryFields": ["code"] },
       "balances": { "realtime": true },
       "transactions": { "realtime": true, "queryFields": ["created_at"] },
-      "rounds": { "realtime": true, "queryFields": ["started_at"] },
-      "broadcasts": { "realtime": true },
+      "rounds": { "realtime": true, "queryFields": ["started_at", "hall", "broadcast"] },
+      "broadcasts": { "realtime": true, "queryFields": ["hall", "game"] },
       "tickets": { "realtime": true, "queryFields": ["created_at", "game", "round", "currency"] }
     }
   }

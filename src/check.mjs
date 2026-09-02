@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const OPT_METHODS = { postOpts: 'POST', patchOpts: 'PATCH', deleteOpts: 'DELETE' }
+const OPT_METHODS = { postOpts: 'POST', putOpts: 'PUT', patchOpts: 'PATCH', deleteOpts: 'DELETE' }
 const CONTRACT_FILE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'contract.json')
 
 function unique(items, keyOf) {
@@ -184,6 +184,17 @@ function loadSnapshotCollections(migrationsDir) {
       fields.add('updated')
       map.set(collection.name, fields)
     }
+
+		for (const migration of fs.readdirSync(migrationsDir).filter(name => name.endsWith('.js')).sort()) {
+			const migrationSource = fs.readFileSync(path.join(migrationsDir, migration), 'utf8')
+			const marker = /api-contract-fields:\s*(\{[^\n]+\})/.exec(migrationSource)
+			if (!marker) continue
+			const additions = JSON.parse(marker[1])
+			for (const [name, names] of Object.entries(additions)) {
+				if (!map.has(name)) map.set(name, new Set(['id', 'created', 'updated']))
+				for (const field of names) map.get(name).add(field)
+			}
+		}
     return { file, map }
   }
   return null

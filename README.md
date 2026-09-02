@@ -22,7 +22,7 @@
 ```json
 {
   "devDependencies": {
-    "@ifastbet/api-contract": "git+https://github.com/iFastBet/ifastbet-api-contract.git#v1.0.0"
+    "@ifastbet/api-contract": "git+https://github.com/iFastBet/ifastbet-api-contract.git#v2.0.0"
   }
 }
 ```
