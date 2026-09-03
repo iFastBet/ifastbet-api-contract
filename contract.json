@@ -1,6 +1,6 @@
 {
   "name": "ifastbet adminka API contract",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "routes": [
     { "operation": "structure.read", "method": "POST", "path": "/api/structure/read" },
     { "operation": "dashboard.read", "method": "POST", "path": "/api/dashboard" },
@@ -47,7 +47,8 @@
     { "operation": "tickets.preview", "method": "POST", "path": "/api/tickets/payout/preview" },
     { "operation": "tickets.intake", "method": "POST", "path": "/api/tickets" },
     { "operation": "tickets.summary", "method": "POST", "path": "/api/tickets/summary" },
-    { "operation": "tickets.payout", "method": "POST", "path": "/api/tickets/payout" }
+    { "operation": "tickets.payout", "method": "POST", "path": "/api/tickets/payout" },
+    { "operation": "streams.session", "method": "POST", "path": "/api/stream/session" }
   ],
   "pocketbase": {
     "collections": {
@@ -61,8 +62,7 @@
       "games": { "queryFields": ["code"] },
       "balances": { "realtime": true },
       "transactions": { "realtime": true, "queryFields": ["created_at"] },
-      "rounds": { "realtime": true, "queryFields": ["started_at", "hall", "game", "broadcast"] },
-      "broadcasts": { "realtime": true, "queryFields": ["hall", "game"] },
+      "rounds": { "queryFields": ["game"] },
       "tickets": { "realtime": true, "queryFields": ["created_at", "game", "round", "currency"] }
     }
   }
