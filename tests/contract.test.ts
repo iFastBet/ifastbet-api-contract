@@ -11,16 +11,16 @@ import {
 describe('contract manifest', () => {
   test('is internally valid and indexable', () => {
     expect(validateContract(contract)).toEqual([])
-    expect(contract.version).toBe('2.0.1')
+    expect(contract.version).toBe('3.0.0')
     expect(Object.keys(operations)).toHaveLength(contract.routes.length)
-    expect(Object.keys(collections)).toHaveLength(12)
+    expect(Object.keys(collections)).toHaveLength(13)
     expect(Object.keys(operations).filter((name) => name.startsWith('creditPricing.') || name.startsWith('settlements.'))).toEqual([])
   })
 
   test('builds parameterized paths safely', () => {
     expect(path('dealers.update', { id: 'node/a' })).toBe('/api/dealers/node%2Fa')
     expect(path('users.password.update', { id: 'user/a' })).toBe('/api/users/user%2Fa/password')
-		expect(path('nodeGameRtp.set', { id: 'hall/a', gameId: 'game/a' })).toBe('/api/nodes/hall%2Fa/game-rtp/game%2Fa')
+		expect(path('hallGameSettings.update', { id: 'hall/a', gameId: 'game/a' })).toBe('/api/halls/hall%2Fa/game-settings/game%2Fa')
     expect(() => path('dealers.update')).toThrow('Missing path parameter')
     expect(() => path('missing')).toThrow('Unknown API operation')
   })
