@@ -1,6 +1,6 @@
 {
   "name": "ifastbet adminka API contract",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "routes": [
     { "operation": "structure.read", "method": "POST", "path": "/api/structure/read" },
     { "operation": "dashboard.read", "method": "POST", "path": "/api/dashboard" },
@@ -25,6 +25,7 @@
     { "operation": "currencies.summary", "method": "GET", "path": "/api/currencies/summary" },
     { "operation": "currencies.create", "method": "POST", "path": "/api/currencies" },
     { "operation": "currencies.update", "method": "PATCH", "path": "/api/currencies/{id}" },
+    { "operation": "currencies.banknotes", "method": "GET", "path": "/api/currencies/{id}/banknotes" },
     { "operation": "nodeCurrencies.grant", "method": "POST", "path": "/api/node-currencies" },
     { "operation": "nodeCurrencies.revoke", "method": "DELETE", "path": "/api/node-currencies/{id}" },
     { "operation": "nodeGameLimits.effective", "method": "GET", "path": "/api/node-game-limits/effective" },
