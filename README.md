@@ -22,7 +22,7 @@
 ```json
 {
   "devDependencies": {
-    "@ifastbet/api-contract": "git+https://github.com/iFastBet/ifastbet-api-contract.git#v5.0.0"
+    "@ifastbet/api-contract": "git+https://github.com/iFastBet/ifastbet-api-contract.git#v6.0.0"
   }
 }
 ```
@@ -37,12 +37,10 @@ bun run node_modules/@ifastbet/api-contract/bin/check.mjs --backend .
 
 ## Изменение контракта
 
-Подготовленная версия 5.1.0 добавляет `GET /api/currencies/{id}/banknotes?page=1`
-для подбора номиналов Numista. Ответ содержит `source`, `items` с `amount` и
-`numista_id`, а также `next_page` (число или `null`). Сохранение выбранного
-`banknotes: number[]` выполняется через существующий PATCH валюты; новый
-маршрут не изменяет конфигурацию. До публикации тега потребители остаются
-зафиксированы на предыдущем выпуске.
+Версия 6.0.0 удаляет `GET /api/currencies/{id}/banknotes`
+и параметр `banknotes` из PATCH валюты. Номиналы назначаются сервером из базового
+справочника и доступны кассиру в `currencies.banknotes: number[]` через обычное
+чтение коллекции и realtime. PATCH валюты принимает только `name` и `symbol`.
 
 1. Изменить `contract.json` и при необходимости адаптеры проверки.
 2. Локально выполнить `bun run verify`.
