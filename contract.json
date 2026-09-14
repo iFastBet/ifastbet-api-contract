@@ -1,69 +1,1770 @@
 {
   "name": "ifastbet adminka API contract",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "routes": [
-    { "operation": "structure.read", "method": "POST", "path": "/api/structure/read" },
-    { "operation": "dashboard.read", "method": "POST", "path": "/api/dashboard" },
-    { "operation": "dealers.create", "method": "POST", "path": "/api/dealers" },
-    { "operation": "dealers.update", "method": "PATCH", "path": "/api/dealers/{id}" },
-    { "operation": "agents.create", "method": "POST", "path": "/api/agents" },
-    { "operation": "agents.update", "method": "PATCH", "path": "/api/agents/{id}" },
-    { "operation": "halls.create", "method": "POST", "path": "/api/halls" },
-    { "operation": "halls.panic", "method": "POST", "path": "/api/halls/{id}/panic" },
-    { "operation": "halls.unpanic", "method": "POST", "path": "/api/halls/{id}/unpanic" },
-    { "operation": "halls.regenerateTvToken", "method": "POST", "path": "/api/halls/{id}/regenerate-tv-token" },
-    { "operation": "halls.update", "method": "PATCH", "path": "/api/halls/{id}" },
-    { "operation": "halls.creationTemplate", "method": "GET", "path": "/api/hall-creation-template" },
-    { "operation": "hallDefaults.read", "method": "GET", "path": "/api/hall-defaults/{currencyId}" },
-    { "operation": "hallDefaults.update", "method": "PUT", "path": "/api/hall-defaults/{currencyId}" },
-    { "operation": "hallGameSettings.read", "method": "GET", "path": "/api/halls/{id}/game-settings" },
-    { "operation": "hallGameSettings.update", "method": "PUT", "path": "/api/halls/{id}/game-settings/{gameId}" },
-    { "operation": "users.create", "method": "POST", "path": "/api/users" },
-    { "operation": "users.update", "method": "PATCH", "path": "/api/users/{id}" },
-    { "operation": "users.password.update", "method": "PATCH", "path": "/api/users/{id}/password" },
-    { "operation": "users.remove", "method": "DELETE", "path": "/api/users/{id}" },
-    { "operation": "currencies.summary", "method": "GET", "path": "/api/currencies/summary" },
-    { "operation": "currencies.create", "method": "POST", "path": "/api/currencies" },
-    { "operation": "currencies.update", "method": "PATCH", "path": "/api/currencies/{id}" },
-    { "operation": "nodeCurrencies.grant", "method": "POST", "path": "/api/node-currencies" },
-    { "operation": "nodeCurrencies.revoke", "method": "DELETE", "path": "/api/node-currencies/{id}" },
-    { "operation": "nodeGameLimits.effective", "method": "GET", "path": "/api/node-game-limits/effective" },
-    { "operation": "nodeGameLimits.create", "method": "POST", "path": "/api/node-game-limits" },
-    { "operation": "nodeGameLimits.update", "method": "PATCH", "path": "/api/node-game-limits/{id}" },
-    { "operation": "nodeGameLimits.remove", "method": "DELETE", "path": "/api/node-game-limits/{id}" },
-    { "operation": "transactions.emit", "method": "POST", "path": "/api/emit" },
-    { "operation": "transactions.transfer", "method": "POST", "path": "/api/transfer" },
-    { "operation": "transactions.grantAndTransfer", "method": "POST", "path": "/api/grant-and-transfer" },
-    { "operation": "rollups.read", "method": "POST", "path": "/api/rollups/read" },
-    { "operation": "journal.read", "method": "POST", "path": "/api/journal/read" },
-    { "operation": "profile.update", "method": "PATCH", "path": "/api/profile" },
-    { "operation": "profile.password.update", "method": "PATCH", "path": "/api/profile/password" },
-    { "operation": "games.update", "method": "PATCH", "path": "/api/games/{id}" },
-    { "operation": "engine.enrollments.create", "method": "POST", "path": "/api/engine/enrollments" },
-    { "operation": "engine.workers.list", "method": "GET", "path": "/api/engine/workers" },
-    { "operation": "engine.streams.list", "method": "GET", "path": "/api/engine/streams" },
-    { "operation": "engine.workers.disable", "method": "POST", "path": "/api/engine/workers/{id}/disable" },
-    { "operation": "tickets.lookup", "method": "POST", "path": "/api/tickets/lookup" },
-    { "operation": "tickets.preview", "method": "POST", "path": "/api/tickets/payout/preview" },
-    { "operation": "tickets.intake", "method": "POST", "path": "/api/tickets" },
-    { "operation": "tickets.summary", "method": "POST", "path": "/api/tickets/summary" },
-    { "operation": "tickets.payout", "method": "POST", "path": "/api/tickets/payout" },
-    { "operation": "streams.session", "method": "POST", "path": "/api/stream/session" }
+    {
+      "operation": "structure.read",
+      "method": "POST",
+      "path": "/api/structure/read"
+    },
+    {
+      "operation": "nodes.directory",
+      "method": "POST",
+      "path": "/api/nodes/read"
+    },
+    {
+      "operation": "dashboard.read",
+      "method": "POST",
+      "path": "/api/dashboard"
+    },
+    {
+      "operation": "dealers.create",
+      "method": "POST",
+      "path": "/api/dealers"
+    },
+    {
+      "operation": "dealers.update",
+      "method": "PATCH",
+      "path": "/api/dealers/{id}"
+    },
+    {
+      "operation": "agents.create",
+      "method": "POST",
+      "path": "/api/agents"
+    },
+    {
+      "operation": "agents.update",
+      "method": "PATCH",
+      "path": "/api/agents/{id}"
+    },
+    {
+      "operation": "halls.create",
+      "method": "POST",
+      "path": "/api/halls"
+    },
+    {
+      "operation": "halls.panic",
+      "method": "POST",
+      "path": "/api/halls/{id}/panic"
+    },
+    {
+      "operation": "halls.unpanic",
+      "method": "POST",
+      "path": "/api/halls/{id}/unpanic"
+    },
+    {
+      "operation": "halls.regenerateTvToken",
+      "method": "POST",
+      "path": "/api/halls/{id}/regenerate-tv-token"
+    },
+    {
+      "operation": "halls.update",
+      "method": "PATCH",
+      "path": "/api/halls/{id}"
+    },
+    {
+      "operation": "halls.creationTemplate",
+      "method": "GET",
+      "path": "/api/hall-creation-template"
+    },
+    {
+      "operation": "hallDefaults.read",
+      "method": "GET",
+      "path": "/api/hall-defaults/{currencyId}"
+    },
+    {
+      "operation": "hallDefaults.update",
+      "method": "PUT",
+      "path": "/api/hall-defaults/{currencyId}"
+    },
+    {
+      "operation": "hallGameSettings.read",
+      "method": "GET",
+      "path": "/api/halls/{id}/game-settings"
+    },
+    {
+      "operation": "hallGameSettings.update",
+      "method": "PUT",
+      "path": "/api/halls/{id}/game-settings/{gameId}"
+    },
+    {
+      "operation": "users.create",
+      "method": "POST",
+      "path": "/api/users"
+    },
+    {
+      "operation": "users.update",
+      "method": "PATCH",
+      "path": "/api/users/{id}"
+    },
+    {
+      "operation": "users.password.update",
+      "method": "PATCH",
+      "path": "/api/users/{id}/password"
+    },
+    {
+      "operation": "users.remove",
+      "method": "DELETE",
+      "path": "/api/users/{id}"
+    },
+    {
+      "operation": "currencies.summary",
+      "method": "GET",
+      "path": "/api/currencies/summary"
+    },
+    {
+      "operation": "currencies.create",
+      "method": "POST",
+      "path": "/api/currencies"
+    },
+    {
+      "operation": "currencies.update",
+      "method": "PATCH",
+      "path": "/api/currencies/{id}"
+    },
+    {
+      "operation": "nodeCurrencies.grant",
+      "method": "POST",
+      "path": "/api/node-currencies"
+    },
+    {
+      "operation": "nodeCurrencies.revoke",
+      "method": "DELETE",
+      "path": "/api/node-currencies/{id}"
+    },
+    {
+      "operation": "nodeGameLimits.effective",
+      "method": "GET",
+      "path": "/api/node-game-limits/effective"
+    },
+    {
+      "operation": "nodeGameLimits.create",
+      "method": "POST",
+      "path": "/api/node-game-limits"
+    },
+    {
+      "operation": "nodeGameLimits.update",
+      "method": "PATCH",
+      "path": "/api/node-game-limits/{id}"
+    },
+    {
+      "operation": "nodeGameLimits.remove",
+      "method": "DELETE",
+      "path": "/api/node-game-limits/{id}"
+    },
+    {
+      "operation": "transactions.emit",
+      "method": "POST",
+      "path": "/api/emit"
+    },
+    {
+      "operation": "transactions.transfer",
+      "method": "POST",
+      "path": "/api/transfer"
+    },
+    {
+      "operation": "transactions.grantAndTransfer",
+      "method": "POST",
+      "path": "/api/grant-and-transfer"
+    },
+    {
+      "operation": "rollups.read",
+      "method": "POST",
+      "path": "/api/rollups/read"
+    },
+    {
+      "operation": "journal.read",
+      "method": "POST",
+      "path": "/api/journal/read"
+    },
+    {
+      "operation": "profile.update",
+      "method": "PATCH",
+      "path": "/api/profile"
+    },
+    {
+      "operation": "profile.password.update",
+      "method": "PATCH",
+      "path": "/api/profile/password"
+    },
+    {
+      "operation": "games.update",
+      "method": "PATCH",
+      "path": "/api/games/{id}"
+    },
+    {
+      "operation": "engine.enrollments.create",
+      "method": "POST",
+      "path": "/api/engine/enrollments"
+    },
+    {
+      "operation": "engine.workers.list",
+      "method": "GET",
+      "path": "/api/engine/workers"
+    },
+    {
+      "operation": "engine.streams.list",
+      "method": "GET",
+      "path": "/api/engine/streams"
+    },
+    {
+      "operation": "engine.workers.disable",
+      "method": "POST",
+      "path": "/api/engine/workers/{id}/disable"
+    },
+    {
+      "operation": "tickets.lookup",
+      "method": "POST",
+      "path": "/api/tickets/lookup"
+    },
+    {
+      "operation": "tickets.preview",
+      "method": "POST",
+      "path": "/api/tickets/payout/preview"
+    },
+    {
+      "operation": "tickets.intake",
+      "method": "POST",
+      "path": "/api/tickets"
+    },
+    {
+      "operation": "tickets.summary",
+      "method": "POST",
+      "path": "/api/tickets/summary"
+    },
+    {
+      "operation": "tickets.payout",
+      "method": "POST",
+      "path": "/api/tickets/payout"
+    },
+    {
+      "operation": "streams.session",
+      "method": "POST",
+      "path": "/api/stream/session"
+    }
   ],
   "pocketbase": {
     "collections": {
-      "users": { "auth": true, "realtime": true },
+      "users": {
+        "auth": true,
+        "realtime": true
+      },
       "permissions": {},
-      "nodes": { "realtime": true },
-      "currencies": { "realtime": true },
-      "node_currencies": { "realtime": true },
+      "nodes": {
+        "realtime": true
+      },
+      "currencies": {
+        "realtime": true
+      },
+      "node_currencies": {
+        "realtime": true
+      },
       "hall_game_settings": {},
       "hall_defaults": {},
-      "games": { "queryFields": ["code"] },
-      "balances": { "realtime": true },
-      "transactions": { "realtime": true, "queryFields": ["created_at"] },
-      "rounds": { "queryFields": ["game"] },
-      "tickets": { "realtime": true, "queryFields": ["created_at", "game", "round", "currency"] }
+      "games": {
+        "queryFields": [
+          "code"
+        ]
+      },
+      "balances": {
+        "realtime": true
+      },
+      "transactions": {
+        "realtime": true,
+        "queryFields": [
+          "created_at"
+        ]
+      },
+      "rounds": {
+        "queryFields": [
+          "game"
+        ]
+      },
+      "tickets": {
+        "realtime": true,
+        "queryFields": [
+          "created_at",
+          "game",
+          "round",
+          "currency"
+        ]
+      }
     }
-  }
+  },
+  "permissions": [
+    {
+      "key": "structure.view",
+      "action": "structure.view",
+      "target_type": "",
+      "section": "structure",
+      "name": "Просмотр структуры",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent",
+        "hall"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "root.dashboard.view",
+      "action": "dashboard.view",
+      "target_type": "root",
+      "section": "dashboard",
+      "name": "Просмотр дашборда",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "root.structure.stats.view",
+      "action": "structure.stats.view",
+      "target_type": "root",
+      "section": "dashboard",
+      "name": "Просмотр показателей в структуре",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "structure.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "root.credits.view",
+      "action": "credits.view",
+      "target_type": "root",
+      "section": "credits",
+      "name": "Просмотр раздела кредитов",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "root.credits.balances.view",
+      "action": "credits.balances.view",
+      "target_type": "root",
+      "section": "credits",
+      "name": "Просмотр балансов",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "root.credits.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "root.credits.turnover.view",
+      "action": "credits.turnover.view",
+      "target_type": "root",
+      "section": "credits",
+      "name": "Просмотр оборотов по кредитам",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "root.credits.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "root.credits.transfers.view",
+      "action": "credits.transfers.view",
+      "target_type": "root",
+      "section": "credits",
+      "name": "Просмотр истории переводов",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "root.credits.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "root.currencies.view",
+      "action": "currencies.view",
+      "target_type": "root",
+      "section": "credits",
+      "name": "Просмотр системных валют",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "root.credits.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "root.currencies.manage",
+      "action": "currencies.manage",
+      "target_type": "root",
+      "section": "credits",
+      "name": "Создание и изменение системных валют",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "root.currencies.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "root.credits.emit",
+      "action": "credits.emit",
+      "target_type": "root",
+      "section": "credits",
+      "name": "Создание кредитов",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "root.credits.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "root.engine.manage",
+      "action": "engine.manage",
+      "target_type": "root",
+      "section": "servers",
+      "name": "Управление вычислительными серверами",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "root.games.settings.view",
+      "action": "games.settings.view",
+      "target_type": "root",
+      "section": "games",
+      "name": "Просмотр настроек игр",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "root.games.settings.manage",
+      "action": "games.settings.manage",
+      "target_type": "root",
+      "section": "games",
+      "name": "Изменение настроек игр",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "root.games.settings.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "root.games.turnover.view",
+      "action": "games.turnover.view",
+      "target_type": "root",
+      "section": "games",
+      "name": "Просмотр оборотов по играм",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "root.games.bets.view",
+      "action": "games.bets.view",
+      "target_type": "root",
+      "section": "games",
+      "name": "Просмотр ставок и чеков",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "root.users.view",
+      "action": "users.view",
+      "target_type": "root",
+      "section": "users",
+      "name": "Просмотр пользователей",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "root.users.create",
+      "action": "users.create",
+      "target_type": "root",
+      "section": "users",
+      "name": "Создание пользователей",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "root.users.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "root.users.update",
+      "action": "users.update",
+      "target_type": "root",
+      "section": "users",
+      "name": "Изменение и удаление пользователей",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "root.users.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "root.journal.view",
+      "action": "journal.view",
+      "target_type": "root",
+      "section": "journal",
+      "name": "Просмотр журнала событий",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "dealer.dashboard.view",
+      "action": "dashboard.view",
+      "target_type": "dealer",
+      "section": "dashboard",
+      "name": "Просмотр дашборда",
+      "applies_to": [
+        "root",
+        "dealer"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "dealer.structure.stats.view",
+      "action": "structure.stats.view",
+      "target_type": "dealer",
+      "section": "dashboard",
+      "name": "Просмотр показателей в структуре",
+      "applies_to": [
+        "root",
+        "dealer"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "structure.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "dealer.create",
+      "action": "create",
+      "target_type": "dealer",
+      "section": "node",
+      "name": "Создание дилеров",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "descendant"
+    },
+    {
+      "key": "dealer.update",
+      "action": "update",
+      "target_type": "dealer",
+      "section": "node",
+      "name": "Изменение дилеров",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "descendant"
+    },
+    {
+      "key": "dealer.credits.view",
+      "action": "credits.view",
+      "target_type": "dealer",
+      "section": "credits",
+      "name": "Просмотр раздела кредитов",
+      "applies_to": [
+        "root",
+        "dealer"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "dealer.credits.balances.view",
+      "action": "credits.balances.view",
+      "target_type": "dealer",
+      "section": "credits",
+      "name": "Просмотр балансов",
+      "applies_to": [
+        "root",
+        "dealer"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "dealer.credits.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "dealer.credits.turnover.view",
+      "action": "credits.turnover.view",
+      "target_type": "dealer",
+      "section": "credits",
+      "name": "Просмотр оборотов по кредитам",
+      "applies_to": [
+        "root",
+        "dealer"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "dealer.credits.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "dealer.credits.transfers.view",
+      "action": "credits.transfers.view",
+      "target_type": "dealer",
+      "section": "credits",
+      "name": "Просмотр истории переводов",
+      "applies_to": [
+        "root",
+        "dealer"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "dealer.credits.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "dealer.credits.transfer",
+      "action": "credits.transfer",
+      "target_type": "dealer",
+      "section": "credits",
+      "name": "Пополнение балансов",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "dealer.credits.view"
+      ],
+      "relation": "descendant"
+    },
+    {
+      "key": "dealer.credits.reclaim",
+      "action": "credits.reclaim",
+      "target_type": "dealer",
+      "section": "credits",
+      "name": "Списание с балансов",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "dealer.credits.view"
+      ],
+      "relation": "descendant"
+    },
+    {
+      "key": "dealer.currencies.manage",
+      "action": "currencies.manage",
+      "target_type": "dealer",
+      "section": "credits",
+      "name": "Подключение и отключение валют",
+      "applies_to": [
+        "root"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "dealer.credits.view"
+      ],
+      "relation": "descendant"
+    },
+    {
+      "key": "dealer.games.settings.view",
+      "action": "games.settings.view",
+      "target_type": "dealer",
+      "section": "games",
+      "name": "Просмотр настроек игр",
+      "applies_to": [
+        "root",
+        "dealer"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "dealer.games.settings.manage",
+      "action": "games.settings.manage",
+      "target_type": "dealer",
+      "section": "games",
+      "name": "Изменение настроек игр",
+      "applies_to": [
+        "root",
+        "dealer"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "dealer.games.settings.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "dealer.games.turnover.view",
+      "action": "games.turnover.view",
+      "target_type": "dealer",
+      "section": "games",
+      "name": "Просмотр оборотов по играм",
+      "applies_to": [
+        "root",
+        "dealer"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "dealer.games.bets.view",
+      "action": "games.bets.view",
+      "target_type": "dealer",
+      "section": "games",
+      "name": "Просмотр ставок и чеков",
+      "applies_to": [
+        "root",
+        "dealer"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "dealer.users.view",
+      "action": "users.view",
+      "target_type": "dealer",
+      "section": "users",
+      "name": "Просмотр пользователей",
+      "applies_to": [
+        "root",
+        "dealer"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "dealer.users.create",
+      "action": "users.create",
+      "target_type": "dealer",
+      "section": "users",
+      "name": "Создание пользователей",
+      "applies_to": [
+        "root",
+        "dealer"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "dealer.users.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "dealer.users.update",
+      "action": "users.update",
+      "target_type": "dealer",
+      "section": "users",
+      "name": "Изменение и удаление пользователей",
+      "applies_to": [
+        "root",
+        "dealer"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "dealer.users.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "dealer.journal.view",
+      "action": "journal.view",
+      "target_type": "dealer",
+      "section": "journal",
+      "name": "Просмотр журнала событий",
+      "applies_to": [
+        "root",
+        "dealer"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "agent.dashboard.view",
+      "action": "dashboard.view",
+      "target_type": "agent",
+      "section": "dashboard",
+      "name": "Просмотр дашборда",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "agent.structure.stats.view",
+      "action": "structure.stats.view",
+      "target_type": "agent",
+      "section": "dashboard",
+      "name": "Просмотр показателей в структуре",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "structure.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "agent.create",
+      "action": "create",
+      "target_type": "agent",
+      "section": "node",
+      "name": "Создание агентов",
+      "applies_to": [
+        "root",
+        "dealer"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "descendant"
+    },
+    {
+      "key": "agent.update",
+      "action": "update",
+      "target_type": "agent",
+      "section": "node",
+      "name": "Изменение агентов",
+      "applies_to": [
+        "root",
+        "dealer"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "descendant"
+    },
+    {
+      "key": "agent.credits.view",
+      "action": "credits.view",
+      "target_type": "agent",
+      "section": "credits",
+      "name": "Просмотр раздела кредитов",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "agent.credits.balances.view",
+      "action": "credits.balances.view",
+      "target_type": "agent",
+      "section": "credits",
+      "name": "Просмотр балансов",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "agent.credits.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "agent.credits.turnover.view",
+      "action": "credits.turnover.view",
+      "target_type": "agent",
+      "section": "credits",
+      "name": "Просмотр оборотов по кредитам",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "agent.credits.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "agent.credits.transfers.view",
+      "action": "credits.transfers.view",
+      "target_type": "agent",
+      "section": "credits",
+      "name": "Просмотр истории переводов",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "agent.credits.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "agent.credits.transfer",
+      "action": "credits.transfer",
+      "target_type": "agent",
+      "section": "credits",
+      "name": "Пополнение балансов",
+      "applies_to": [
+        "root",
+        "dealer"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "agent.credits.view"
+      ],
+      "relation": "descendant"
+    },
+    {
+      "key": "agent.credits.reclaim",
+      "action": "credits.reclaim",
+      "target_type": "agent",
+      "section": "credits",
+      "name": "Списание с балансов",
+      "applies_to": [
+        "root",
+        "dealer"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "agent.credits.view"
+      ],
+      "relation": "descendant"
+    },
+    {
+      "key": "agent.currencies.manage",
+      "action": "currencies.manage",
+      "target_type": "agent",
+      "section": "credits",
+      "name": "Подключение и отключение валют",
+      "applies_to": [
+        "root",
+        "dealer"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "agent.credits.view"
+      ],
+      "relation": "descendant"
+    },
+    {
+      "key": "agent.games.settings.view",
+      "action": "games.settings.view",
+      "target_type": "agent",
+      "section": "games",
+      "name": "Просмотр настроек игр",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "agent.games.settings.manage",
+      "action": "games.settings.manage",
+      "target_type": "agent",
+      "section": "games",
+      "name": "Изменение настроек игр",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "agent.games.settings.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "agent.games.turnover.view",
+      "action": "games.turnover.view",
+      "target_type": "agent",
+      "section": "games",
+      "name": "Просмотр оборотов по играм",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "agent.games.bets.view",
+      "action": "games.bets.view",
+      "target_type": "agent",
+      "section": "games",
+      "name": "Просмотр ставок и чеков",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "agent.users.view",
+      "action": "users.view",
+      "target_type": "agent",
+      "section": "users",
+      "name": "Просмотр пользователей",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "agent.users.create",
+      "action": "users.create",
+      "target_type": "agent",
+      "section": "users",
+      "name": "Создание пользователей",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "agent.users.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "agent.users.update",
+      "action": "users.update",
+      "target_type": "agent",
+      "section": "users",
+      "name": "Изменение и удаление пользователей",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "agent.users.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "agent.journal.view",
+      "action": "journal.view",
+      "target_type": "agent",
+      "section": "journal",
+      "name": "Просмотр журнала событий",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "hall.dashboard.view",
+      "action": "dashboard.view",
+      "target_type": "hall",
+      "section": "dashboard",
+      "name": "Просмотр дашборда",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent",
+        "hall"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "hall.structure.stats.view",
+      "action": "structure.stats.view",
+      "target_type": "hall",
+      "section": "dashboard",
+      "name": "Просмотр показателей в структуре",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent",
+        "hall"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "structure.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "hall.create",
+      "action": "create",
+      "target_type": "hall",
+      "section": "node",
+      "name": "Создание залов",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "descendant"
+    },
+    {
+      "key": "hall.update",
+      "action": "update",
+      "target_type": "hall",
+      "section": "node",
+      "name": "Изменение залов",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "descendant"
+    },
+    {
+      "key": "hall.credits.view",
+      "action": "credits.view",
+      "target_type": "hall",
+      "section": "credits",
+      "name": "Просмотр раздела кредитов",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent",
+        "hall"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "hall.credits.balances.view",
+      "action": "credits.balances.view",
+      "target_type": "hall",
+      "section": "credits",
+      "name": "Просмотр балансов",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent",
+        "hall"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "hall.credits.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "hall.credits.turnover.view",
+      "action": "credits.turnover.view",
+      "target_type": "hall",
+      "section": "credits",
+      "name": "Просмотр оборотов по кредитам",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent",
+        "hall"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "hall.credits.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "hall.credits.transfers.view",
+      "action": "credits.transfers.view",
+      "target_type": "hall",
+      "section": "credits",
+      "name": "Просмотр истории переводов",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent",
+        "hall"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "hall.credits.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "hall.credits.transfer",
+      "action": "credits.transfer",
+      "target_type": "hall",
+      "section": "credits",
+      "name": "Пополнение балансов",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "hall.credits.view"
+      ],
+      "relation": "descendant"
+    },
+    {
+      "key": "hall.credits.reclaim",
+      "action": "credits.reclaim",
+      "target_type": "hall",
+      "section": "credits",
+      "name": "Списание с балансов",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "hall.credits.view"
+      ],
+      "relation": "descendant"
+    },
+    {
+      "key": "hall.games.settings.view",
+      "action": "games.settings.view",
+      "target_type": "hall",
+      "section": "games",
+      "name": "Просмотр настроек игр",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent",
+        "hall"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "hall.games.settings.manage",
+      "action": "games.settings.manage",
+      "target_type": "hall",
+      "section": "games",
+      "name": "Изменение настроек игр",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent",
+        "hall"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "hall.games.settings.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "hall.games.turnover.view",
+      "action": "games.turnover.view",
+      "target_type": "hall",
+      "section": "games",
+      "name": "Просмотр оборотов по играм",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent",
+        "hall"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "hall.games.bets.view",
+      "action": "games.bets.view",
+      "target_type": "hall",
+      "section": "games",
+      "name": "Просмотр ставок и чеков",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent",
+        "hall"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "hall.tv.language.manage",
+      "action": "tv.language.manage",
+      "target_type": "hall",
+      "section": "games",
+      "name": "Изменение языка TV",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent",
+        "hall"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "hall.cashiers.view",
+      "action": "cashiers.view",
+      "target_type": "hall",
+      "section": "users",
+      "name": "Просмотр кассиров",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent",
+        "hall"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "hall.cashiers.manage",
+      "action": "cashiers.manage",
+      "target_type": "hall",
+      "section": "users",
+      "name": "Создание, изменение и удаление кассиров",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent",
+        "hall"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "hall.cashiers.view"
+      ],
+      "relation": "subtree"
+    },
+    {
+      "key": "hall.panic.enable",
+      "action": "panic.enable",
+      "target_type": "hall",
+      "section": "security",
+      "name": "Включение режима паники",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent",
+        "hall"
+      ],
+      "roles": [
+        "manager",
+        "cashier"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "hall.panic.disable",
+      "action": "panic.disable",
+      "target_type": "hall",
+      "section": "security",
+      "name": "Отключение режима паники",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "descendant"
+    },
+    {
+      "key": "hall.users.view",
+      "action": "users.view",
+      "target_type": "hall",
+      "section": "users",
+      "name": "Просмотр менеджеров",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent",
+        "hall"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "hall.users.create",
+      "action": "users.create",
+      "target_type": "hall",
+      "section": "users",
+      "name": "Создание менеджеров",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "hall.users.view"
+      ],
+      "relation": "descendant"
+    },
+    {
+      "key": "hall.users.update",
+      "action": "users.update",
+      "target_type": "hall",
+      "section": "users",
+      "name": "Изменение и удаление менеджеров",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [
+        "hall.users.view"
+      ],
+      "relation": "descendant"
+    },
+    {
+      "key": "hall.journal.view",
+      "action": "journal.view",
+      "target_type": "hall",
+      "section": "journal",
+      "name": "Просмотр журнала событий",
+      "applies_to": [
+        "root",
+        "dealer",
+        "agent",
+        "hall"
+      ],
+      "roles": [
+        "manager"
+      ],
+      "requires": [],
+      "relation": "subtree"
+    },
+    {
+      "key": "cashier.bets.create",
+      "action": "cashier.bets.create",
+      "target_type": "hall",
+      "section": "cashier",
+      "name": "Приём ставок",
+      "applies_to": [
+        "hall"
+      ],
+      "roles": [
+        "cashier"
+      ],
+      "requires": [],
+      "relation": "self"
+    },
+    {
+      "key": "cashier.reports.view",
+      "action": "cashier.reports.view",
+      "target_type": "hall",
+      "section": "cashier",
+      "name": "Просмотр отчётов кассира",
+      "applies_to": [
+        "hall"
+      ],
+      "roles": [
+        "cashier"
+      ],
+      "requires": [],
+      "relation": "self"
+    },
+    {
+      "key": "cashier.reports.turnover.view",
+      "action": "cashier.reports.turnover.view",
+      "target_type": "hall",
+      "section": "cashier",
+      "name": "Просмотр оборотов кассира",
+      "applies_to": [
+        "hall"
+      ],
+      "roles": [
+        "cashier"
+      ],
+      "requires": [
+        "cashier.reports.view"
+      ],
+      "relation": "self"
+    },
+    {
+      "key": "cashier.reports.checks.view",
+      "action": "cashier.reports.checks.view",
+      "target_type": "hall",
+      "section": "cashier",
+      "name": "Просмотр чеков кассира",
+      "applies_to": [
+        "hall"
+      ],
+      "roles": [
+        "cashier"
+      ],
+      "requires": [
+        "cashier.reports.view"
+      ],
+      "relation": "self"
+    },
+    {
+      "key": "cashier.reports.checks.payout",
+      "action": "cashier.reports.checks.payout",
+      "target_type": "hall",
+      "section": "cashier",
+      "name": "Выплата чеков",
+      "applies_to": [
+        "hall"
+      ],
+      "roles": [
+        "cashier"
+      ],
+      "requires": [
+        "cashier.reports.view"
+      ],
+      "relation": "self"
+    }
+  ]
 }

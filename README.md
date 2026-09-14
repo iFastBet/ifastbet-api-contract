@@ -6,6 +6,7 @@
 
 ## Что зафиксировано
 
+- каталог разрешений по типам узлов, ролям и зависимостям;
 - custom REST routes, которые использует админка;
 - PocketBase collections, доступные клиентскому API-слою;
 - realtime-возможности коллекций;
@@ -22,7 +23,7 @@
 ```json
 {
   "devDependencies": {
-    "@ifastbet/api-contract": "git+https://github.com/iFastBet/ifastbet-api-contract.git#v6.0.0"
+    "@ifastbet/api-contract": "git+https://github.com/iFastBet/ifastbet-api-contract.git#v7.0.0"
   }
 }
 ```
@@ -36,6 +37,9 @@ bun run node_modules/@ifastbet/api-contract/bin/check.mjs --backend .
 Каждый репозиторий проверяет только собственный код. Кросс-repository checkout и GitHub token не нужны.
 
 ## Изменение контракта
+
+Версия 7.0.0 вводит типизированные разрешения и `POST /api/nodes/read`.
+Модель, перенос и согласованный выпуск потребителей описаны в [docs/permissions.md](docs/permissions.md).
 
 Версия 6.0.0 удаляет `GET /api/currencies/{id}/banknotes`
 и параметр `banknotes` из PATCH валюты. Номиналы назначаются сервером из базового

@@ -1,11 +1,14 @@
 {
   "name": "@ifastbet/api-contract",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "private": true,
   "type": "module",
   "description": "Versioned contract between ifastbet-adminka and ifastbet-pocketbase",
   "exports": {
-    ".": "./src/index.js",
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    },
     "./contract": "./contract.json",
     "./check": "./src/check.mjs"
   },
@@ -16,5 +19,6 @@
     "check": "bun run bin/check.mjs --contract",
     "test": "bun test",
     "verify": "bun test && bun run check"
-  }
+  },
+  "types": "./src/index.d.ts"
 }
