@@ -20,9 +20,20 @@ test('typed permission catalogue is closed, acyclic and never grants an upper le
 test('language, cashier work and administrative roles are independent', () => {
   const p = key => contract.permissions.find(p=>p.key===key);
   expect(p('hall.tv.language.manage').requires).toEqual([]);
-  expect(p('hall.users.create').applies_to).not.toContain('hall');
+  expect(p('hall.users.manage').applies_to).not.toContain('hall');
   expect(p('cashier.bets.create').roles).toEqual(['cashier']);
   expect(p('agent.users.create').applies_to).toEqual(['root','dealer','agent']);
   expect(p('hall.credits.transfer').applies_to).not.toContain('hall');
   expect(p('games.settings.manage')).toBeUndefined();
+});
+
+test('manager and cashier management each combine writes behind a separate view permission', () => {
+  for (const family of ['users', 'cashiers']) {
+    const permissions = contract.permissions.filter(p => p.target_type === 'hall' && p.action.startsWith(family + '.'));
+    expect(permissions.map(p => p.action)).toEqual([`${family}.view`, `${family}.manage`]);
+    expect(permissions[1].requires).toEqual([`hall.${family}.view`]);
+  }
+  const manager = contract.permissions.find(p => p.key === 'hall.users.manage');
+  expect(manager.applies_to).toEqual(['root', 'dealer', 'agent']);
+  expect(manager.relation).toBe('descendant');
 });

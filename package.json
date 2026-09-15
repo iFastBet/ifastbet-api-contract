@@ -1,6 +1,6 @@
 {
   "name": "@ifastbet/api-contract",
-  "version": "7.0.0",
+  "version": "8.0.0",
   "private": true,
   "type": "module",
   "description": "Versioned contract between ifastbet-adminka and ifastbet-pocketbase",

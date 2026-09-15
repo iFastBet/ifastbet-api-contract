@@ -1,6 +1,6 @@
 {
   "name": "ifastbet adminka API contract",
-  "version": "7.0.0",
+  "version": "8.0.0",
   "routes": [
     {
       "operation": "structure.read",
@@ -1630,30 +1630,11 @@
       "relation": "subtree"
     },
     {
-      "key": "hall.users.create",
-      "action": "users.create",
+      "key": "hall.users.manage",
+      "action": "users.manage",
       "target_type": "hall",
       "section": "users",
-      "name": "Создание менеджеров",
-      "applies_to": [
-        "root",
-        "dealer",
-        "agent"
-      ],
-      "roles": [
-        "manager"
-      ],
-      "requires": [
-        "hall.users.view"
-      ],
-      "relation": "descendant"
-    },
-    {
-      "key": "hall.users.update",
-      "action": "users.update",
-      "target_type": "hall",
-      "section": "users",
-      "name": "Изменение и удаление менеджеров",
+      "name": "Создание, изменение и удаление менеджеров",
       "applies_to": [
         "root",
         "dealer",

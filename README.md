@@ -23,7 +23,7 @@
 ```json
 {
   "devDependencies": {
-    "@ifastbet/api-contract": "git+https://github.com/iFastBet/ifastbet-api-contract.git#v7.0.0"
+    "@ifastbet/api-contract": "git+https://github.com/iFastBet/ifastbet-api-contract.git#v8.0.0"
   }
 }
 ```
@@ -37,6 +37,11 @@ bun run node_modules/@ifastbet/api-contract/bin/check.mjs --backend .
 Каждый репозиторий проверяет только собственный код. Кросс-repository checkout и GitHub token не нужны.
 
 ## Изменение контракта
+
+Версия 8.0.0 объединяет создание, изменение и удаление менеджеров зала
+в `hall.users.manage`; просмотр остаётся отдельным. Старые `hall.users.create`
+и `hall.users.update` удалены из runtime-каталога. Миграция заменяет любое из них
+новым правом, поэтому прежние частичные назначения получают все три операции.
 
 Версия 7.0.0 вводит типизированные разрешения и `POST /api/nodes/read`.
 Модель, перенос и согласованный выпуск потребителей описаны в [docs/permissions.md](docs/permissions.md).
