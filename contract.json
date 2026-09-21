@@ -1,7 +1,12 @@
 {
   "name": "ifastbet adminka API contract",
-  "version": "8.0.0",
+  "version": "8.1.0",
   "routes": [
+    {
+      "operation": "release.read",
+      "method": "GET",
+      "path": "/api/release"
+    },
     {
       "operation": "structure.read",
       "method": "POST",

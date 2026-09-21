@@ -11,13 +11,14 @@ import {
 describe('contract manifest', () => {
   test('is internally valid and indexable', () => {
     expect(validateContract(contract)).toEqual([])
-    expect(contract.version).toBe('8.0.0')
+    expect(contract.version).toBe('8.1.0')
     expect(Object.keys(operations)).toHaveLength(contract.routes.length)
 		expect(Object.keys(collections)).toHaveLength(12)
     expect(Object.keys(operations).filter((name) => name.startsWith('creditPricing.') || name.startsWith('settlements.'))).toEqual([])
   })
 
   test('builds parameterized paths safely', () => {
+    expect(path('release.read')).toBe('/api/release')
     expect(path('dealers.update', { id: 'node/a' })).toBe('/api/dealers/node%2Fa')
     expect(path('users.password.update', { id: 'user/a' })).toBe('/api/users/user%2Fa/password')
 		expect(path('hallGameSettings.update', { id: 'hall/a', gameId: 'game/a' })).toBe('/api/halls/hall%2Fa/game-settings/game%2Fa')
