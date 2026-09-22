@@ -1,6 +1,6 @@
 {
   "name": "ifastbet adminka API contract",
-  "version": "8.1.0",
+  "version": "9.0.0",
   "routes": [
     {
       "operation": "release.read",
@@ -1512,24 +1512,6 @@
       "target_type": "hall",
       "section": "games",
       "name": "Просмотр ставок и чеков",
-      "applies_to": [
-        "root",
-        "dealer",
-        "agent",
-        "hall"
-      ],
-      "roles": [
-        "manager"
-      ],
-      "requires": [],
-      "relation": "subtree"
-    },
-    {
-      "key": "hall.tv.language.manage",
-      "action": "tv.language.manage",
-      "target_type": "hall",
-      "section": "games",
-      "name": "Изменение языка TV",
       "applies_to": [
         "root",
         "dealer",

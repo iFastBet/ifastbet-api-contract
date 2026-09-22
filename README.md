@@ -23,7 +23,7 @@
 ```json
 {
   "devDependencies": {
-    "@ifastbet/api-contract": "git+https://github.com/iFastBet/ifastbet-api-contract.git#v8.0.0"
+    "@ifastbet/api-contract": "git+https://github.com/iFastBet/ifastbet-api-contract.git#v9.0.0"
   }
 }
 ```
@@ -37,6 +37,12 @@ bun run node_modules/@ifastbet/api-contract/bin/check.mjs --backend .
 Каждый репозиторий проверяет только собственный код. Кросс-repository checkout и GitHub token не нужны.
 
 ## Изменение контракта
+
+Версия 9.0.0 удаляет `hall.tv.language.manage`. Язык TV задаёт кассир
+в `lang` ссылки; язык профиля пользователя сохраняется. Согласованное изменение
+PocketBase удаляет `nodes.language`, запрещает `language` в создании/изменении
+зала и убирает язык из stream session. Adminka больше не показывает настройку
+языка зала. Выпуск требует TV common 0.4.0 во всех шести TV-приложениях.
 
 Версия 8.0.0 объединяет создание, изменение и удаление менеджеров зала
 в `hall.users.manage`; просмотр остаётся отдельным. Старые `hall.users.create`

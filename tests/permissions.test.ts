@@ -17,9 +17,9 @@ test('typed permission catalogue is closed, acyclic and never grants an upper le
     walk(p.key);
   }
 });
-test('language, cashier work and administrative roles are independent', () => {
+test('cashier work and administrative roles are independent; TV has no permission', () => {
   const p = key => contract.permissions.find(p=>p.key===key);
-  expect(p('hall.tv.language.manage').requires).toEqual([]);
+  expect(p('hall.tv.language.manage')).toBeUndefined();
   expect(p('hall.users.manage').applies_to).not.toContain('hall');
   expect(p('cashier.bets.create').roles).toEqual(['cashier']);
   expect(p('agent.users.create').applies_to).toEqual(['root','dealer','agent']);
