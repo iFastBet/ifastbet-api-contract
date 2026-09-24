@@ -1,6 +1,6 @@
 {
   "name": "ifastbet adminka API contract",
-  "version": "9.0.0",
+  "version": "9.1.0",
   "routes": [
     {
       "operation": "release.read",
@@ -171,6 +171,31 @@
       "operation": "transactions.grantAndTransfer",
       "method": "POST",
       "path": "/api/grant-and-transfer"
+    },
+    {
+      "operation": "creditPrices.read",
+      "method": "GET",
+      "path": "/api/credit-prices"
+    },
+    {
+      "operation": "creditPrices.save",
+      "method": "PUT",
+      "path": "/api/credit-prices"
+    },
+    {
+      "operation": "creditIssuances.preview",
+      "method": "POST",
+      "path": "/api/credit-issuances/preview"
+    },
+    {
+      "operation": "creditIssuances.create",
+      "method": "POST",
+      "path": "/api/credit-issuances"
+    },
+    {
+      "operation": "creditIssuances.read",
+      "method": "POST",
+      "path": "/api/credit-issuances/read"
     },
     {
       "operation": "rollups.read",

@@ -11,10 +11,11 @@ import {
 describe('contract manifest', () => {
   test('is internally valid and indexable', () => {
     expect(validateContract(contract)).toEqual([])
-    expect(contract.version).toBe('9.0.0')
+    expect(contract.version).toBe('9.1.0')
     expect(Object.keys(operations)).toHaveLength(contract.routes.length)
 		expect(Object.keys(collections)).toHaveLength(12)
-    expect(Object.keys(operations).filter((name) => name.startsWith('creditPricing.') || name.startsWith('settlements.'))).toEqual([])
+    expect(Object.keys(operations).filter((name) => name.startsWith('settlements.'))).toEqual([])
+    expect(path('creditIssuances.preview')).toBe('/api/credit-issuances/preview')
   })
 
   test('builds parameterized paths safely', () => {
