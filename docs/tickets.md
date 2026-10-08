@@ -77,5 +77,6 @@ server-accepted lines, one total and the same barcode; informational copies
 contain all lines and no payout credential.
 
 Version 10 is a breaking response/schema change and requires coordinated
-backend/frontend rollout. The current workspace uses local `file:` dependencies;
-publishing the immutable tag and deploying are separate release work.
+backend/frontend rollout. Consumers pin immutable tag `v10.0.0`; local `file:`
+dependencies are reserved for workspace integration. Deployment status is
+tracked separately for each environment.

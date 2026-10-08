@@ -1,8 +1,8 @@
 # Release compatibility
 
-The local multi-bet implementation targets API contract **10.0.0**. Consumers
-use the workspace `file:` dependency until the coordinated immutable tag is
-published; this does not change the deployed release status. See [tickets](tickets.md).
+The multi-bet receipt contract is **10.0.0**, published as immutable tag
+`v10.0.0`. Consumers pin that tag; workspace `file:` dependencies are for local
+integration only. The deployed release status is tracked per environment. See [tickets](tickets.md).
 
 `GET /api/release` is public, read-only and returns `Cache-Control: no-store`.
 No authentication credentials, paths or infrastructure addresses are exposed.
