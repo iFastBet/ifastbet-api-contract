@@ -1,5 +1,9 @@
 # Release compatibility
 
+The local multi-bet implementation targets API contract **10.0.0**. Consumers
+use the workspace `file:` dependency until the coordinated immutable tag is
+published; this does not change the deployed release status. See [tickets](tickets.md).
+
 `GET /api/release` is public, read-only and returns `Cache-Control: no-store`.
 No authentication credentials, paths or infrastructure addresses are exposed.
 
@@ -8,7 +12,7 @@ No authentication credentials, paths or infrastructure addresses are exposed.
   "environment": "production",
   "release_id": "<immutable release identifier>",
   "backend_version": "0.9.23",
-  "api_contract": "8.1.0",
+  "api_contract": "10.0.0",
   "engine_core": "0.2.3",
   "protocol": "engine-v2",
   "policy": "rtp-ewma-v9",
